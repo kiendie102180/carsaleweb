@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto 99</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <img src="logo1.png" alt="Logo" />
+        <h1>Auto 99</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home page</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact Page</a></li>
+            <li><a href="user.html">User</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="product">
+            <img src="AudiA8.jpg" alt="Audi A8">
+            <h2>Audi A8</h2>
+            <p>Price: 10149$</p>
+            <button onclick="redirectToDetails('Audi A8', 10149, 'AudiA8.jpg')">Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="Kia.jpg" alt="Kia">
+            <h2>Kia Morning</h2>
+            <p>Price: 11047$</p>
+            <button onclick="redirectToDetails('Kia Morning', 11047, 'Kia.jpg')">Buy Now</button>
+        </div>
+        <div class="product">
+            <img src="VF.jpg" alt="Vinfast Fadil">
+            <h2>Vinfast Fadil</h2>
+            <p>Price: 327$</p>
+            <button onclick="redirectToDetails('Vinfast Fadil', 327, 'VF.jpg')">Buy Now</button>
+        </div>
+
+        <div class="product">
+            <img src="vfluxsa.jpg" alt="Vinfast Lux SA">
+            <h2>Vinfast Lux SA 2.0</h2>
+            <p>Price: 41000$</p>
+            <button onclick="redirectToDetails('Vinfast Lux SA 2.0', 41000, 'vfluxsa.jpg')">Buy Now</button>
+        </div>
+        
+        <div class="product">
+            <img src="luxa.jpg" alt="Vinfast Lux A">
+            <h2>Vinfast Lux A</h2>
+            <p>Price: 127600$</p>
+            <button onclick="redirectToDetails('Vinfast Lux A', 127600, 'luxa.jpg')">Buy Now</button>
+        </div>
+        
+        <div class="product">
+            <img src="bmw320i.jpg" alt="BMW 320i">
+            <h2>BMW 320i</h2>
+            <p>Price: 122071$</p>
+            <button onclick="redirectToDetails('BMW 320i', 122071, 'bmw320i.jpg')">Buy Now</button>
+        </div>
+        
+        <div class="product">
+            <img src="accent.jpg" alt="Hyundai Accent">
+            <h2>Hyundai Accent</h2>
+            <p>Price: 122905$</p>
+            <button onclick="redirectToDetails('Hyundai Accent', 122905, 'accent.jpg')">Buy Now</button>
+        </div>
+        
+        <div class="product">
+            <img src="crt.jpg" alt="Kia Cerato">
+            <h2>Kia Cerato</h2>
+            <p>Price: 122864$</p>
+            <button onclick="redirectToDetails('Kia Cerato', 122864, 'crt.jpg')">Buy Now</button>
+        </div>
+        
+        <div class="product">
+            <img src="raptor.webp" alt="Ford Ranger Raptor">
+            <h2>Ford Ranger Raptor</h2>
+            <p>Price: 112782$</p>
+            <button onclick="redirectToDetails('Ford Ranger Raptor', 112782, 'raptor.webp')">Buy Now</button>
+        </div>
+        
+        <div class="product">
+            <img src="Cvrl.webp" alt="Chevrolet Camaro">
+            <h2>Chevrolet Camaro</h2>
+            <p>Price: 107221$</p>
+            <button onclick="redirectToDetails('Chevrolet Camaro', 107221, 'Cvrl.webp')">Buy Now</button>
+        </div>
+    </section>
+    <script>
+        function redirectToDetails(name, price, image) {
+            const url = `product-details.html?name=${encodeURIComponent(name)}&price=${price}&image=${encodeURIComponent(image)}`;
+            window.location.href = url;
+        }
+    </script>
+    <footer>
+        <p>&copy; 2024 Auto 99</p>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>

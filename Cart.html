@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+  <header>
+    <h1>Auto 99</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home page</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="contact.html">Contact Page</a></li>
+      <li><a href="login.html">Logout</a></li>
+    </ul>
+  </nav>
+  <h1>Shopping Cart</h1>
+
+  <table id="cart-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Unit Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Dữ liệu giỏ hàng sẽ được hiển thị ở đây -->
+    </tbody>
+  </table>
+
+  <p id="total-price">Total: 0$</p>
+  <button id="refresh-cart">Delete Product</button>
+  <button id="pay-button">Pay</button>
+
+  <script>
+    // Lấy thông tin giỏ hàng từ localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Hiển thị giỏ hàng trong bảng
+    const cartTableBody = document.querySelector('#cart-table tbody');
+    let totalPrice = 0;
+
+    cart.forEach((product, index) => {
+      const row = document.createElement('tr');
+
+      // Tạo các cột cho tên, số lượng, giá đơn và tổng
+      row.innerHTML = `
+        <td>${product.name}</td>
+        <td>1</td> <!-- Giả sử số lượng luôn là 1 -->
+        <td>${product.price}$</td>
+        <td>${product.price}$</td>
+      `;
+      cartTableBody.appendChild(row);
+      totalPrice += parseFloat(product.price);
+    });
+
+    // Cập nhật tổng giá
+    document.getElementById('total-price').textContent = `Total: ${totalPrice}$`;
+
+    // Thêm sự kiện cho nút "Pay"
+    document.getElementById('pay-button').addEventListener('click', function() {
+      // Chuyển hướng đến trang checkout.html
+      window.location.href = 'checkout.html';
+    });
+
+    // Thêm sự kiện cho nút "Delete Product" (xóa sản phẩm)
+    document.getElementById('refresh-cart').addEventListener('click', function() {
+      // Xóa giỏ hàng khỏi localStorage
+      localStorage.removeItem('cart');
+      // Tải lại trang để cập nhật giỏ hàng
+      location.reload();
+    });
+  </script>
+
+  <script src="cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+header img {
+    float: left;
+    width: 8%;
+    height: 8%;
+  }
+  nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  nav a:hover {
+    background-color: #000;
+  }
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+}
+
+.product img {
+  width: 150px; /* Đặt chiều rộng cố định */
+  height: 150px; /* Đặt chiều cao cố định */
+  object-fit: cover; /* Cắt ảnh để vừa khung mà vẫn giữ tỷ lệ */
+  margin-bottom: 10px;
+}
+
+#message {
+  display: none;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

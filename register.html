@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="logo text-center">
+      <h1>Welcome to Auto 99</h1>
+    </div>
+    <div class="wrapper">
+      <div class="inner-warpper text-center">
+        <h2 class="title">Create a new account</h2>
+        <form id="registerForm" onsubmit="return false;"> <!-- Prevent default submit behavior -->
+          <div class="input-group">
+            <input class="form-control" name="userName" id="username" type="text" placeholder="User Name" required />
+            <span class="lighting"></span>
+          </div>
+          <div class="input-group">
+            <input class="form-control" name="email" id="email" type="email" placeholder="Email" required />
+            <span class="lighting"></span>
+          </div>
+          <div class="input-group">
+            <input class="form-control" name="phone" id="phone" type="tel" placeholder="Phone Number" required />
+            <span class="lighting"></span>
+          </div>
+          <div class="input-group">
+            <input class="form-control" name="password" id="password" type="password" placeholder="Password" required />
+            <span class="lighting"></span>
+          </div>
+          <div class="input-group">
+            <input class="form-control" name="confirmPassword" id="confirmPassword" type="password" placeholder="Confirm Password" required />
+            <span class="lighting"></span>
+          </div>
+
+          <button type="button" id="Register">Register</button> <!-- Changed to type "button" -->
+        </form>
+      </div>
+      <div class="signup-wrapper text-center">
+        <a href="login.html">Already have an account? <span class="text-primary">Login</span></a>
+      </div>
+    </div>
+</body>
+<script src="register.js"></script>
+</html>

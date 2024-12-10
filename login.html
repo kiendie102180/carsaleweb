@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="login.css">
+    </head>
+    <body>
+        <!-- Logo -->
+        <div class="logo text-center">
+            <h1>Welcome to Auto 99</h1>
+        </div>
+
+        <!-- Nút Home -->
+        <div class="home-button">
+            <a href="index.html" class="btn-home">Home</a>
+        </div>
+
+        <!-- Login Form -->
+        <div class="wrapper">
+            <div class="inner-warpper text-center">
+                <h2 class="title">Login to your account</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input class="form-control" name="userName" id="userName" type="text" placeholder="User Name" required />
+                        <span class="lighting"></span>
+                    </div>
+                    <div class="input-group">
+                        <input class="form-control" name="password" id="password" type="password" placeholder="Password" required />
+                        <span class="lighting"></span>
+                    </div>
+
+                    <button type="submit" id="login">Login</button>
+                    <div class="clearfix supporter">
+                        <div class="pull-left remember-me">
+                            <input id="rememberMe" type="checkbox">
+                            <label for="rememberMe">Remember Me</label>
+                        </div>
+                        <a class="forgot pull-right" href="#">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+            <div class="signup-wrapper text-center">
+                <a href="register.html">Don't have an account? <span class="text-primary">Create One</span></a>
+            </div>
+        </div>
+
+        <script src="login.js"></script>
+    </body>
+</html>

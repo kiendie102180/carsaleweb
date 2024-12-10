@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="product-details.css">
+  <title>Product Details</title>
+</head>
+<body>
+  <header>
+    <h1>Auto 99</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home page</a></li>
+      <li><a href="cart1.html">Cart</a></li>
+      <li><a href="contact.html">Contact Page</a></li>
+      <li><a href="login.html">Logout</a></li>
+    </ul>
+  </nav>
+  <h1>Product Details</h1>
+  <div class="product">
+    <img id="product-image" src="" alt="Product Image" style="width:300px; height:auto;">
+    <h2 id="product-name">Product Name</h2>
+    <p id="product-price">Price: $0</p>
+    <button id="add-to-cart">Add to Cart</button>
+  </div>
+
+  <script>
+    // Lấy thông tin từ URL query string
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const price = params.get('price');
+    const image = params.get('image');
+
+    // Hiển thị thông tin sản phẩm
+    document.getElementById('product-name').textContent = name || 'Product Name';
+    document.getElementById('product-price').textContent = `Price: ${price || 0}$`;
+    document.getElementById('product-image').src = image || 'default.jpg';
+
+    // Thêm sản phẩm vào giỏ hàng và chuyển đến cart.html
+    document.getElementById('add-to-cart').addEventListener('click', function() {
+        // Giả sử giỏ hàng là một mảng trong localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Thêm sản phẩm vào giỏ hàng
+        const product = {
+            name: name,
+            price: price,
+            image: image
+        };
+        cart.push(product);
+
+        // Lưu giỏ hàng vào localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        // Chuyển hướng đến trang cart.html
+        window.location.href = 'cart.html';  // Sửa lại trang chuyển hướng nếu cần
+    });
+  </script>
+</body>
+</html>
